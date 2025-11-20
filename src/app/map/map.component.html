@@ -11,12 +11,14 @@
 </div>
 
 <div id="switch-map-button-container">
-  <span>City</span>
-  <button id="switch-map-button" (click)="switchMap()">
-    Switch
-  </button>
-  <span>Municipality</span>
+  <span>{{ __('city') }}</span>
+  <label class="switch">
+    <input type="checkbox">
+    <span (click)="switchMap()"></span>
+  </label>
+  <span>{{ __('municipality') }}</span>
 </div>
+
 
 
 

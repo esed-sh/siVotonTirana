@@ -15,6 +15,14 @@ const TRANSLATIONS : { [key: string]: Record<Language, string> } = {
   'main.small-parties-hide': {
     'sq': 'Fsheh partitë pa përfaqësim në parlament',
     'en': 'Hide parties not represented in the parliament'
+  },
+  'map.city': {
+    'sq': 'Qyteti',
+    'en': 'City'
+  },
+  'map.municipality': {
+    'sq': 'Bashkia',
+    'en': 'Municipality'
   }
 }
 

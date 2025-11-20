@@ -1,7 +1,10 @@
+@use "../../assets/variables/colors" as *;
+
 .map-container{
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
+  margin: 0 auto;
 
   img {
     position: absolute;
@@ -26,6 +29,10 @@
 }
 
 @media (min-width: 768px) {
+  .map-container{
+    width: 85%;
+  }
+
   #switch-map-button-container{
     position: relative;
     top: -65px;
@@ -36,4 +43,42 @@
   }
 }
 
+/*Toggle Button code, Don't touch! */
+.switch {
+  /* Um im nächsten Schritt den runden Button mit position:absolute festzusetzen */
+  position: relative;
+  width: 28px;
+  height: 16px;
+  display: inline-block;
+}
+
+.switch span {
+  position: absolute;
+  background-color: $main-brand-color;
+  border-radius: 10px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.switch span::before {
+  background-color: $background-brand-color;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  height: 12px;
+  width: 12px;
+}
+
+input:checked + span::before {
+  transform: translateX(12px);
+}
+
+.switch input {
+  display: none;
+}
 

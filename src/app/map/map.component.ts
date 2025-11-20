@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CsvLoaderService, LoadOption} from '../services/csv-loader.service';
 import {NgForOf} from '@angular/common';
+import {TranslateService} from '../services/translate.service';
 
 @Component({
   selector: 'app-map',
@@ -21,7 +22,8 @@ export class MapComponent implements OnInit{
 
   protected showCity: boolean = false;
 
-  constructor(private csvLoader: CsvLoaderService) {
+  constructor(private csvLoader: CsvLoaderService,
+              private translateService: TranslateService) {
   }
 
   ngOnInit() {
@@ -37,6 +39,10 @@ export class MapComponent implements OnInit{
 
   switchMap(){
     this.showCity = !this.showCity;
+    console.log(this.showCity)
   }
 
+  __(key: string): string {
+    return this.translateService.translate('map.' + key);
+  }
 }
