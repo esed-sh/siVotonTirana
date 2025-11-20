@@ -1,0 +1,29 @@
+@use "../../assets/variables/colors" as *;
+
+#header{
+  width: 100%;
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#header-left{
+  background-color: red;
+  span{
+    font-family: Quantico, sans-serif;
+    font-size: 2rem;
+    &#si, &#Tirana{
+      color: $main-text-color;
+    }
+    &#voton{
+      color: $main-brand-color;
+    }
+  }
+}
+#header-right{
+  background-color: lightblue;
+  span{
+    font-family: Quantico, sans-serif;
+    font-size: 0.5rem;
+  }
+}

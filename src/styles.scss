@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@use "assets/variables/colors" as *;
+
+/* Fonts */
+@font-face {
+  font-family: 'Homenaje';
+  src: url("assets/fonts/Homenaje/Homenaje-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quantico';
+  src: url("assets/fonts/Quantico/Quantico-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}

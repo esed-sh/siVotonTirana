@@ -1,0 +1,17 @@
+#app{
+  display: flex;
+  flex-direction: column;
+}
+
+#app-main{
+  width: 100%;
+  max-width: 1000px;
+  align-self: center;
+  padding: 0 5px; //Overwritten for large screens
+}
+
+@media (min-width: 768px) {
+  #app-main {
+    padding: 10px 0;
+  }
+}
