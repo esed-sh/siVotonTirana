@@ -8,7 +8,7 @@
 #year-options{
   display: flex;
   flex-direction: row;
-  margin: 60px 3px 0 3px;
+  margin: 30px 3px 0 3px; //Overwritten for larger screens
   gap: 10px;
 
   .year-button{
@@ -83,16 +83,25 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin: 5px 0 0 0;
   .small-parties-button{
     font-family: Sofia-Sans, sans-serif;
     font-size: 12px;
     color: $main-text-color;
     cursor: pointer;
-    padding: 0 2px 0 0;
+    padding: 0 5px 0 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $main-text-color;
+    border-radius: 2px;
   }
 }
 
 @media (min-width: 768px) {
+  #year-options{
+    margin: 60px 3px 0 3px;
+  }
+
   #party-options{
 
     .party-button {

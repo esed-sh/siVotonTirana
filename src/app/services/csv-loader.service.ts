@@ -3,6 +3,13 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs';
 import Papa from 'papaparse';
 
+export enum LoadOption{
+  PartyStructure = 'assets/data/party_structure.csv',
+  AdministrativeUnitsMunicipality = 'assets/svg/region/administrative_units.csv',
+  AdministrativeUnitsCity = 'assets/svg/city/administrative_units.csv'
+
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,10 +17,8 @@ export class CsvLoaderService {
 
   constructor(private http: HttpClient) { }
 
-  loadParties(){
-    let filePath = 'assets/data/party_structure.csv';
-
-    return this.http.get(filePath, { responseType: 'text'})
+  loadParties(loadOption: LoadOption){
+    return this.http.get(loadOption, { responseType: 'text'})
       .pipe(
         map(csvData => {
           const parsed = Papa.parse(csvData, {

@@ -2,8 +2,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0.533968 0.445545" width="800" height="800">
   <style>
     .boundary {
-      fill: none;
-      stroke: #000000;
+      fill: #222222;
+      stroke: #222222;
       stroke-width: 0.5;
       vector-effect: non-scaling-stroke;
     }

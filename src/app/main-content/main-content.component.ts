@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NgClass, NgForOf, SlicePipe} from '@angular/common';
-import {CsvLoaderService} from '../services/csv-loader.service';
+import {CsvLoaderService, LoadOption} from '../services/csv-loader.service';
 import {TranslateService} from '../services/translate.service';
+import {MapComponent} from '../map/map.component';
 
 export enum Year{
   Year2023 = '2023',
@@ -14,7 +15,8 @@ export enum Year{
   imports: [
     NgClass,
     SlicePipe,
-    NgForOf
+    NgForOf,
+    MapComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
@@ -36,7 +38,7 @@ export class MainContentComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.csvLoader.loadParties().subscribe(data => {
+    this.csvLoader.loadParties(LoadOption.PartyStructure).subscribe(data => {
       this.parties = data;
 
       const indices = [6, 7, 10, 11, 15, 16];

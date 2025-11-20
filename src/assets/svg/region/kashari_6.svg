@@ -3,7 +3,7 @@
   <style>
     .boundary {
       fill: none;
-      stroke: #000000;
+      stroke: #222222;
       stroke-width: 0.5;
       vector-effect: non-scaling-stroke;
     }
