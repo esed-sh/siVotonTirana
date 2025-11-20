@@ -5,13 +5,18 @@
     <span id="Tirana">Tirana</span>
   </div>
   <div id="header-right">
-    <span>SQ</span>
+    <span (click)="changeLanguage(Language.Albanian)"
+          [ngClass]="{ 'selected' : currentLanguage() === Language.Albanian }">
+      SQ
+    </span>
     <span>/</span>
-    <span>EN</span>
+    <span (click)="changeLanguage(Language.English)"
+          [ngClass]="{ 'selected' : currentLanguage() === Language.English }">
+      EN
+    </span>
   </div>
 </div>
-
-<p>
-  {{ __('test') }}
-</p>
+<div id="description">
+  {{__('description')}}
+</div>
 
