@@ -11,12 +11,15 @@ import {NgForOf} from '@angular/common';
   styleUrl: './map.component.scss'
 })
 export class MapComponent implements OnInit{
+
   @Input() selected_2023!: number;
   @Input() selected_2025!: number;
   @Input() selected_diff!: number;
 
   protected administrativeUnitsCity: any[] = [];
   protected administrativeUnitsMunicipality: any[] = [];
+
+  protected showCity: boolean = false;
 
   constructor(private csvLoader: CsvLoaderService) {
   }
@@ -32,12 +35,8 @@ export class MapComponent implements OnInit{
     })
   }
 
-  isCityUnit(name: string): boolean {
-    return name.includes('Njësia');
-  }
-
-  onCityClick() {
-    console.log('clicked');
+  switchMap(){
+    this.showCity = !this.showCity;
   }
 
 }

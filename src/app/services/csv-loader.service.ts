@@ -7,7 +7,6 @@ export enum LoadOption{
   PartyStructure = 'assets/data/party_structure.csv',
   AdministrativeUnitsMunicipality = 'assets/svg/region/administrative_units.csv',
   AdministrativeUnitsCity = 'assets/svg/city/administrative_units.csv'
-
 }
 
 @Injectable({

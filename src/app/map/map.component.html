@@ -1,12 +1,23 @@
-<div class="map-container" xmlns="http://www.w3.org/1999/html">
+<div class="map-container">
+  @if(showCity){
   <img *ngFor="let unit of administrativeUnitsCity"
        [src]="'assets/svg/city/' + unit.svg_filename"
-       [alt]=unit.name
-  >
-</div>
-<div class="map-container">
+       [alt]=unit.name>
+  } @else {
   <img *ngFor="let unit of administrativeUnitsMunicipality"
-       [src]="'assets/svg/region/' + unit.svg_filename"
-       [alt]=unit.name
-  >
+         [src]="'assets/svg/region/' + unit.svg_filename"
+         [alt]=unit.name>
+  }
 </div>
+
+<div id="switch-map-button-container">
+  <span>City</span>
+  <button id="switch-map-button" (click)="switchMap()">
+    Switch
+  </button>
+  <span>Municipality</span>
+</div>
+
+
+
+
