@@ -1,5 +1,5 @@
 id,year,party,candidate,hexcode,logo_file,min_percentage,max_percentage
-1,2023,Lëvizja Bashkë,Arlind Qori,#232929,,0.4,9.88
+1,2023,Lëvizja Bashkë,Arlind Qori,#232929,src/assets/images/2023_1.png,0.4,9.88
 2,2023,Fronti i Majtë,Marko Dajti,#f99ea3,,0.0,16.09
 3,2023,"Partia Drejtësi, Integrim dhe Unitet",Lajla Pernaska,#b0b75e,,0.0,3.44
 4,2023,Partia Socialiste e Shqipërisë,Erion Veliaj,#FF00FF,,34.52,88.4

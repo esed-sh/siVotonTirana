@@ -1,0 +1,45 @@
+@use "../../assets/variables/colors" as *;
+
+#main{
+  display: flex;
+  flex-direction: column;
+}
+
+#year-options{
+  display: flex;
+  flex-direction: row;
+  margin: 60px 3px 0 3px;
+  gap: 10px;
+
+  .year-button{
+    padding: 0 10px 0 10px;
+    background-color: $detail-background-color;
+    color: $main-text-color;
+    font-family: Quantico, sans-serif;
+    font-size: 14px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $main-text-color;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .year-button-selected{
+    padding: 0 10px 0 10px;
+    background-color: $main-brand-color;
+    color: $main-text-color;
+    font-family: Quantico, sans-serif;
+    font-size: 14px;
+    font-weight: 450;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: $detail-brand-color;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+
+#party-options{
+  background-color: $background-brand-color;
+  margin: 20px 0 0 0;
+}

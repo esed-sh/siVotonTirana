@@ -1,0 +1,32 @@
+<div id="main">
+
+  <div id="year-options">
+    <button class="year-button"
+            (click)="changeYear(Year.Year2023)"
+            [ngClass]="{ 'year-button-selected' : selectedYear === Year.Year2023 }"
+    >
+      {{ Year.Year2023 }}
+    </button>
+    <button class="year-button"
+            (click)="changeYear(Year.Year2025)"
+            [ngClass]="{ 'year-button-selected' : selectedYear === Year.Year2025 }"
+    >
+      2025
+    </button>
+    <button class="year-button"
+            (click)="changeYear(Year.Difference)"
+            [ngClass]="{ 'year-button-selected' : selectedYear === Year.Difference }"
+    >
+      +/-
+    </button>
+  </div>
+
+  <div id="party-options">
+
+    @if(selectedYear === Year.Year2023){
+      2023
+    }
+
+  </div>
+
+</div>
