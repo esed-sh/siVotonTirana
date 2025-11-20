@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgClass} from '@angular/common';
+import {CsvLoaderService} from '../services/csv-loader.service';
 
 export enum Year{
   Year2023 = '2023',
@@ -15,12 +16,20 @@ export enum Year{
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })
-export class MainContentComponent {
+export class MainContentComponent implements OnInit{
 
   Year = Year;
   protected selectedYear = Year.Year2025;
+  private parties: any[] = [];
 
-  constructor() {
+  constructor(private csvLoader: CsvLoaderService) {
+  }
+
+  ngOnInit() {
+    this.csvLoader.loadParties().subscribe(data => {
+      this.parties = data;
+      console.log(data);
+    })
   }
 
   changeYear(year: Year){
