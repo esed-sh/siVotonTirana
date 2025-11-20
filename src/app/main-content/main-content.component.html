@@ -1,5 +1,9 @@
 <div id="main">
 
+
+
+
+  <!-- YEAR SELECTION -->
   <div id="year-options">
     <button class="year-button"
             (click)="changeYear(Year.Year2023)"
@@ -21,12 +25,64 @@
     </button>
   </div>
 
-  <div id="party-options">
 
+
+
+  <!-- POLITICAL SUBJECT SELECTION -->
+  <div id="party-options">
     @if(selectedYear === Year.Year2023){
-      2023
+      <div class="party-button"
+           *ngFor="let party of parties | slice:0:6"
+           (click)="select_2023(party.id)"
+      >
+        <img [src]="party.logo_file" class="party-logo" [alt]="party.candidate">
+        <span class="party-name" [ngClass]="{ selected : (party.id === selected_2023) }">{{ party.candidate }}</span>
+      </div>
     }
 
+    @if(selectedYear === Year.Year2025){
+      @if(smallParties){
+        <div class="party-button"
+             *ngFor="let party of parties | slice:6:18"
+             (click)="select_2025(party.id)"
+        >
+          <img [src]="party.logo_file" class="party-logo" [alt]="party.party">
+          <span class="party-name" [ngClass]="{ selected : (party.id === selected_2025) }">{{ party.party }}</span>
+        </div>
+      } @else {
+        <div class="party-button"
+             *ngFor="let party of main_parties"
+             (click)="select_2025(party.id)"
+        >
+          <img [src]="party.logo_file" class="party-logo" [alt]="party.party">
+          <span class="party-name" [ngClass]="{ selected : (party.id === selected_2025) }">{{ party.party }}</span>
+        </div>
+      }
+    }
+
+    @if(selectedYear === Year.Difference){
+      <div class="party-button"
+           *ngFor="let party of parties | slice:17"
+           (click)="select_diff(party.id)"
+      >
+        <img [src]="party.logo_file" class="party-logo" [alt]="party.party">
+        <span class="party-name" [ngClass]="{ selected : (party.id === selected_diff) }">{{ party.party }}</span>
+      </div>
+    }
   </div>
+  @if(selectedYear === Year.Year2025){
+    <div id="small-parties-section">
+      @if(smallParties){
+        <span class="small-parties-button" (click)="hideSmallParties()">{{ __('small-parties-hide') }}</span>
+      } @else {
+        <span class="small-parties-button" (click)="showSmallParties()">{{ __('small-parties-show') }}</span>
+      }
+    </div>
+  }
+
+
+
+
+
 
 </div>

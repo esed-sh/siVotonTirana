@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {NgClass} from '@angular/common';
+import {NgClass, NgForOf, SlicePipe} from '@angular/common';
 import {CsvLoaderService} from '../services/csv-loader.service';
+import {TranslateService} from '../services/translate.service';
 
 export enum Year{
   Year2023 = '2023',
@@ -11,7 +12,9 @@ export enum Year{
 @Component({
   selector: 'app-main-content',
   imports: [
-    NgClass
+    NgClass,
+    SlicePipe,
+    NgForOf
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
@@ -20,20 +23,53 @@ export class MainContentComponent implements OnInit{
 
   Year = Year;
   protected selectedYear = Year.Year2025;
-  private parties: any[] = [];
+  protected parties: any[] = [];
+  protected main_parties: any[] = [];
 
-  constructor(private csvLoader: CsvLoaderService) {
+  protected selected_2023: number = 1;
+  protected selected_2025: number = 7;
+  protected selected_diff: number = 18;
+  protected smallParties: boolean = false;
+
+  constructor(private csvLoader: CsvLoaderService,
+              private translateService: TranslateService) {
   }
 
   ngOnInit() {
     this.csvLoader.loadParties().subscribe(data => {
       this.parties = data;
-      console.log(data);
+
+      const indices = [6, 7, 10, 11, 15, 16];
+      this.main_parties = this.parties.filter((party, index) => indices.includes(index));
     })
   }
 
   changeYear(year: Year){
     this.selectedYear = year;
+  }
+
+  select_2023(id: number){
+    this.selected_2023 = id;
+  }
+
+  select_2025(id: number){
+    this.selected_2025 = id;
+  }
+
+  select_diff(id: number){
+    this.selected_diff = id;
+  }
+
+  showSmallParties(){
+    this.smallParties = true;
+  }
+
+  hideSmallParties() {
+    this.smallParties = false;
+  }
+
+  __(key: string): string {
+    return this.translateService.translate('main.' + key);
   }
 
 }

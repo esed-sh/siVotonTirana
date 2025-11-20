@@ -42,4 +42,65 @@
 #party-options{
   background-color: $background-brand-color;
   margin: 20px 0 0 0;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 7.5px;
+  column-gap: 20px;
+
+  .party-button {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+
+    .party-logo {
+      display: block;
+      width: 20px; //Overwritten for larger screens
+      height: 20px; //Overwritten for larger screens
+      border-style: solid;
+      border-width: 1px;
+      border-color: $main-text-color;
+
+    }
+
+    .party-name {
+      align-self: center;
+      color: $main-text-color;
+      font-family: Sofia-Sans, sans-serif;
+      font-size: 14px;
+    }
+  }
+}
+
+.selected{
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#small-parties-section{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  .small-parties-button{
+    font-family: Sofia-Sans, sans-serif;
+    font-size: 12px;
+    color: $main-text-color;
+    cursor: pointer;
+    padding: 0 2px 0 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #party-options{
+
+    .party-button {
+
+      .party-logo {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
 }

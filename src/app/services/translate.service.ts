@@ -8,6 +8,14 @@ const TRANSLATIONS : { [key: string]: Record<Language, string> } = {
     'en': 'Results of the 2023 local elections and the 2025 parliamentary elections in the municipality of Tirana ' +
           'according to the location of the polling stations.'
   },
+  'main.small-parties-show': {
+    'sq': 'Shfaq partitë pa përfaqësim në parlament',
+    'en': 'Show parties not represented in the parliament'
+  },
+  'main.small-parties-hide': {
+    'sq': 'Fsheh partitë pa përfaqësim në parlament',
+    'en': 'Hide parties not represented in the parliament'
+  }
 }
 
 @Injectable({
