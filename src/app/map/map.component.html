@@ -1,0 +1,12 @@
+<div class="map-container" xmlns="http://www.w3.org/1999/html">
+  <img *ngFor="let unit of administrativeUnitsCity"
+       [src]="'assets/svg/city/' + unit.svg_filename"
+       [alt]=unit.name
+  >
+</div>
+<div class="map-container">
+  <img *ngFor="let unit of administrativeUnitsMunicipality"
+       [src]="'assets/svg/region/' + unit.svg_filename"
+       [alt]=unit.name
+  >
+</div>
