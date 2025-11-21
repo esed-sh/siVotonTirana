@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
 
   img {
     position: absolute;
@@ -13,6 +13,12 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
+  }
+
+  .point{
+    width: 5px;
+    height: 5px;
+    background-color: red;
   }
 }
 
@@ -31,6 +37,7 @@
 @media (min-width: 768px) {
   .map-container{
     width: 85%;
+    margin: 0 auto 0 auto;
   }
 
   #switch-map-button-container{
@@ -45,7 +52,6 @@
 
 /*Toggle Button code, Don't touch! */
 .switch {
-  /* Um im nächsten Schritt den runden Button mit position:absolute festzusetzen */
   position: relative;
   width: 28px;
   height: 16px;

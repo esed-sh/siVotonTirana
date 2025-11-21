@@ -24,10 +24,10 @@ export enum Year{
 export class MainContentComponent implements OnInit{
 
   Year = Year;
-  protected selectedYear = Year.Year2025;
   protected parties: any[] = [];
   protected main_parties: any[] = [];
 
+  protected selectedYear = Year.Year2025;
   protected selected_2023: number = 1;
   protected selected_2025: number = 7;
   protected selected_diff: number = 18;
@@ -38,7 +38,7 @@ export class MainContentComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.csvLoader.loadParties(LoadOption.PartyStructure).subscribe(data => {
+    this.csvLoader.loadData(LoadOption.PartyStructure).subscribe(data => {
       this.parties = data;
 
       const indices = [6, 7, 10, 11, 15, 16];
