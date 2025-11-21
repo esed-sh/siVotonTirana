@@ -15,10 +15,16 @@
     pointer-events: none;
   }
 
-  .point{
-    width: 5px;
-    height: 5px;
-    background-color: red;
+  .point-viewBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .point{
+      cursor: pointer;
+    }
   }
 }
 

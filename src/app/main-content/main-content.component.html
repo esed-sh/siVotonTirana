@@ -43,7 +43,7 @@
     @if(selectedYear === Year.Year2025){
       @if(smallParties){
         <div class="party-button"
-             *ngFor="let party of parties | slice:6:18"
+             *ngFor="let party of parties | slice:6:17"
              (click)="select_2025(party.id)"
         >
           <img [src]="party.logo_file" class="party-logo" [alt]="party.party">
