@@ -1,0 +1,12 @@
+id,name,emertimi,nr_njesie,njesia_adm,feature_id,point_count,min_lon,min_lat,max_lon,max_lat,svg_filename
+10,Njësia 1,Njesia Administrative 01,1,NJA 1,XlJ6g,457,19.825212,41.323554,19.872675,41.338664,njësia_1_10.svg
+9,Njësia 2,Njesia Administrative 02,2,NJA 2,166AY,392,19.810515,41.295368,19.859712,41.334634,njësia_2_9.svg
+8,Njësia 3,Njesia Administrative 03,3,NJA 3,M0TBg,271,19.829129,41.330449,19.860302,41.346129,njësia_3_8.svg
+25,Njësia 4,Njesia Administrative 04,04,NJA 4,TPG8U,332,19.822901,41.339624,19.867848,41.368754,njësia_4_25.svg
+7,Njësia 5,Njesia Administrative 05,5,NJA 5,XnYTv,222,19.785732,41.309582,19.821435,41.323775,njësia_5_7.svg
+6,Njësia 6,Njesia Administrative 06,6,NJA 6,FSzSS,340,19.754337,41.300948,19.793163,41.335788,njësia_6_6.svg
+5,Njësia 7,Njesia Administrative 07,7,NJA 7,b2wAP,301,19.775641,41.320291,19.810554,41.342380,njësia_7_5.svg
+4,Njësia 8,Njesia Administrative 08,8,NJA 8,yaqJE,147,19.811057,41.330003,19.832888,41.352133,njësia_8_4.svg
+3,Njësia 9,Njesia Administrative 09,9,NJA 9,rPMbe,180,19.799089,41.328752,19.822904,41.352138,njësia_9_3.svg
+2,Njësia 10,Njesia Administrative 10,10,NJA 10,1CsxE,146,19.804886,41.322320,19.819690,41.334168,njësia_10_2.svg
+1,Njësia 11,Njesia Administrative 11,11,NJA 11,46XJq,575,19.753309,41.332875,19.806135,41.365906,njësia_11_1.svg

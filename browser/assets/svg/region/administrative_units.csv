@@ -1,0 +1,28 @@
+id,name,emertimi,nr_njesie,njesia_adm,feature_id,point_count,min_lon,min_lat,max_lon,max_lat,svg_filename
+11,Baldushku,Njesia Administrative BALDUSHK,19,NJA BALDUSHK,Ji14n,2205,19.745669,41.118071,19.879430,41.260023,baldushku_11.svg
+12,Bërzhita,Njesia Administrative BERZHITE,20,NJA BERZHITE,5GBp8,2085,19.859936,41.168978,20.036617,41.294636,bërzhita_12.svg
+21,Dajti,Njesia Administrative DAJT,12,NJA DAJT,XDTLG,1299,19.841934,41.261597,19.994073,41.415760,dajti_21.svg
+19,Farka,Njesia Administrative FARKE,13,NJA FARKE,j3Lol,925,19.811032,41.273825,19.901196,41.331053,farka_19.svg
+6,Kashari,Njesia Administrative KASHAR,15,NJA KASHAR,EaS6l,1778,19.652390,41.316222,19.780577,41.372265,kashari_6.svg
+22,Krraba,Njesia Administrative KRRABE,21,NJA KRRABE,rMeID,564,19.922980,41.188052,19.994953,41.236046,krraba_22.svg
+27,Lagjia 12,Lagjia 12,12,L 12,G5dQ9,76,19.853959,41.336266,19.879024,41.353414,lagjia_12_27.svg
+28,Lagjia 13,Lagjia 13,13,L 13,XgNeB,352,19.783295,41.292491,19.828579,41.314329,lagjia_13_28.svg
+26,Lagjia 14,Lagjia 14,14,L 14,MDoy0,58,19.767686,41.317552,19.787026,41.339001,lagjia_14_26.svg
+24,Ndroqi,Njesia Administrative NDROQ,16,NJA NDROQ,qWvjJ,2333,19.593227,41.222953,19.716709,41.331076,ndroqi_24.svg
+10,Njësia 1,Njesia Administrative 01,1,NJA 1,XlJ6g,457,19.825212,41.323554,19.872675,41.338664,njësia_1_10.svg
+9,Njësia 2,Njesia Administrative 02,2,NJA 2,166AY,392,19.810515,41.295368,19.859712,41.334634,njësia_2_9.svg
+8,Njësia 3,Njesia Administrative 03,3,NJA 3,M0TBg,271,19.829129,41.330449,19.860302,41.346129,njësia_3_8.svg
+25,Njësia 4,Njesia Administrative 04,04,NJA 4,TPG8U,332,19.822901,41.339624,19.867848,41.368754,njësia_4_25.svg
+7,Njësia 5,Njesia Administrative 05,5,NJA 5,XnYTv,222,19.785732,41.309582,19.821435,41.323775,njësia_5_7.svg
+6,Njësia 6,Njesia Administrative 06,6,NJA 6,FSzSS,340,19.754337,41.300948,19.793163,41.335788,njësia_6_6.svg
+5,Njësia 7,Njesia Administrative 07,7,NJA 7,b2wAP,301,19.775641,41.320291,19.810554,41.342380,njësia_7_5.svg
+4,Njësia 8,Njesia Administrative 08,8,NJA 8,yaqJE,147,19.811057,41.330003,19.832888,41.352133,njësia_8_4.svg
+3,Njësia 9,Njesia Administrative 09,9,NJA 9,rPMbe,180,19.799089,41.328752,19.822904,41.352138,njësia_9_3.svg
+2,Njësia 10,Njesia Administrative 10,10,NJA 10,1CsxE,146,19.804886,41.322320,19.819690,41.334168,njësia_10_2.svg
+1,Njësia 11,Njesia Administrative 11,11,NJA 11,46XJq,575,19.753309,41.332875,19.806135,41.365906,njësia_11_1.svg
+14,Petrela,Njesia Administrative PETRELE,18,NJA PETRELE,JPXRC,1307,19.786185,41.216277,19.975891,41.300885,petrela_14.svg
+15,Peza,Njesia Administrative PEZE,17,NJA PEZE,pUGVl,3062,19.646414,41.129216,19.775827,41.295547,peza_15.svg
+16,Shëngjergji,Njesia Administrative SHENGJERGJ,22,NJA SHENGJERGJ,l3drG,1397,19.975981,41.252020,20.239536,41.408554,shëngjergji_16.svg
+23,Vaqarri,Njesia Administrative VAQARR,14,NJA VAQARR,PLj5U,1372,19.685636,41.253776,19.827579,41.339604,vaqarri_23.svg
+17,Zall Bastari,Njesia Administrative ZALL BASTAR,23,NJA ZALL BASTAR,84bfA,873,19.862056,41.345492,20.057250,41.515073,zall_bastari_17.svg
+18,Zall Herr,Njesia Administrative ZALL HERR,24,NJA ZALL HERR,98JgP,1742,19.745299,41.369296,19.870602,41.463311,zall_herr_18.svg
