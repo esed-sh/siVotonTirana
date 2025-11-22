@@ -123,12 +123,14 @@
 
 
 <!-- GRADIENT -->
-<div id="gradient-container">
-  <span>{{parties[activeMap() - 1].min_percentage}}%</span>
+@if(selectedYear !== Year.Difference){
+  <div id="gradient-container">
+    <span>{{parties[activeMap() - 1].min_percentage}}%</span>
     <div [style.background]="'linear-gradient(to right, white, ' + hexcode() + ')'" id="gradient">
     </div>
-  <span>{{parties[activeMap() - 1].max_percentage}}%</span>
-</div>
+    <span>{{parties[activeMap() - 1].max_percentage}}%</span>
+  </div>
+}
 </div>
 
 

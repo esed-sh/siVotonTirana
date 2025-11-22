@@ -115,7 +115,7 @@ export class MapComponent implements OnInit{
     let party = this.parties[this.activeMap() - 1];
     let percentage = this.percentage(point);
     const linear = (percentage - party.min_percentage) / (party.max_percentage - party.min_percentage);
-    return 1.5 * Math.pow(linear, 2)
+    return 1.35 * Math.pow(linear, 2)
   }
 
   hexcodeDiff(point: number){
