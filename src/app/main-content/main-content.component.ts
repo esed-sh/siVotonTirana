@@ -28,9 +28,9 @@ export class MainContentComponent implements OnInit{
   protected main_parties: any[] = [];
 
   protected selectedYear = Year.Year2025;
-  protected selected_2023: number = 1;
-  protected selected_2025: number = 7;
-  protected selected_diff: number = 18;
+  protected selected_2023: number = 4;
+  protected selected_2025: number = 11;
+  protected selected_diff: number = 20;
   protected smallParties: boolean = false;
 
   constructor(private csvLoader: CsvLoaderService,
