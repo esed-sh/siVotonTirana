@@ -27,20 +27,12 @@
     height: 100%;
     width: 100%;
 
-    /* iOS touch improvements */
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-
     /* Firefox-specific fixes */
     shape-rendering: geometricPrecision; /* Better rendering */
     pointer-events: bounding-box; /* Better hit detection */
 
     .point{
       cursor: pointer;
-      /* Make touch target larger on mobile */
-      @media (max-width: 768px) {
-        stroke-width: 2 !important; /* Thicker stroke = easier to tap */
-      }
     }
   }
 }
