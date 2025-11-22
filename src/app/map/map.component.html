@@ -4,18 +4,19 @@
     <img *ngFor="let unit of administrativeUnitsCity"
        [src]="'assets/svg/city/' + unit.svg_filename"
        [alt]=unit.name>
-    <svg viewBox="0 0 0.098594 0.082349"
+    <svg viewBox="0 0 98.594 82.349"
          width="800"
          height="800"
+         preserveAspectRatio="xMidYMid meet"
          class="point-viewBox">
       @for(point of coordinates; track point.id){
         @if(point.in_njesia && selectedYear !== Year.Difference){
           <circle [attr.cx]="point.svg_x_njesia"
                   [attr.cy]="point.svg_y_njesia"
-                  [attr.r]="0.0005"
+                  [attr.r]="0.5"
                   [attr.fill]="hexcode()"
                   [attr.stroke]="hexcode()"
-                  [attr.stroke-width]="0.0001"
+                  [attr.stroke-width]="0.1"
                   [attr.fill-opacity]="opacity(point.id)"
                   class="point"
                   (click)="click(point.id)"
@@ -26,10 +27,10 @@
         @if(point.in_njesia && selectedYear === Year.Difference){
           <circle [attr.cx]="point.svg_x_njesia"
                   [attr.cy]="point.svg_y_njesia"
-                  [attr.r]="0.0005"
+                  [attr.r]="0.5"
                   [attr.fill]="hexcodeDiff(point.id)"
                   stroke="#222222"
-                  [attr.stroke-width]="0.0001"
+                  [attr.stroke-width]="0.1"
                   [attr.fill-opacity]="opacityDiff()"
                   class="point"
                   (click)="click(point.id)"
@@ -56,18 +57,19 @@
          [alt]=unit.name>
   }
   @if(!showCity){
-    <svg viewBox="0 0 0.533968 0.445545"
+    <svg viewBox="0 0 533.968 445.545"
          width="800"
          height="800"
+         preserveAspectRatio="xMidYMid meet"
          class="point-viewBox">
       @for(point of coordinates; track point.id){
         @if(!point.in_njesia && selectedYear !== Year.Difference){
           <circle [attr.cx]="point.svg_x_whole"
                   [attr.cy]="point.svg_y_whole"
-                  [attr.r]="0.003"
+                  [attr.r]="3"
                   [attr.fill]="hexcode()"
                   [attr.stroke]="hexcode()"
-                  [attr.stroke-width]="0.0006"
+                  [attr.stroke-width]="0.6"
                   [attr.fill-opacity]="opacity(point.id)"
                   class="point"
                   (click)="click(point.id)"
@@ -78,10 +80,10 @@
         @if(!point.in_njesia && selectedYear === Year.Difference){
           <circle [attr.cx]="point.svg_x_whole"
                   [attr.cy]="point.svg_y_whole"
-                  [attr.r]="0.003"
+                  [attr.r]="3"
                   [attr.fill]="hexcodeDiff(point.id)"
                   stroke="#222222"
-                  [attr.stroke-width]="0.0006"
+                  [attr.stroke-width]="0.6"
                   [attr.fill-opacity]="opacityDiff()"
                   class="point"
                   (click)="click(point.id)"

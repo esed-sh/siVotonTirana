@@ -58,10 +58,17 @@ export class MapComponent implements OnInit{
       console.log('Loaded municipality.')
     })
     this.csvLoader.loadData(LoadOption.Coordinates).subscribe(data => {
-      this.coordinates = data;
+      this.coordinates = (data as any[]).map((point: any) => ({
+        ...point,
+        svg_x_njesia: point.svg_x_njesia * 1000,
+        svg_y_njesia: point.svg_y_njesia * 1000,
+        svg_x_whole: point.svg_x_whole * 1000,
+        svg_y_whole: point.svg_y_whole * 1000
+      }));
+
       this.selectedPoint = 225;
       console.log('Loaded polling places.');
-    })
+    });
     this.csvLoader.loadData(LoadOption.Results2023).subscribe(data => {
       this.results2023 = data;
       console.log('Loaded 2023 results.');

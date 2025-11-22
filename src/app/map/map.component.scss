@@ -6,6 +6,9 @@
   aspect-ratio: 4/3;
   margin: 30px auto 0 auto;
 
+  /* Force layer compositing differently in Firefox */
+  transform: translate3d(0, 0, 0);
+
   img {
     position: absolute;
     top: 0;
@@ -13,6 +16,8 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
+    /* Prevent Firefox from creating separate layers for each image */
+    will-change: auto;
   }
 
   .point-viewBox{
@@ -21,6 +26,10 @@
     left: 0;
     height: 100%;
     width: 100%;
+
+    /* Firefox-specific fixes */
+    shape-rendering: geometricPrecision; /* Better rendering */
+    pointer-events: bounding-box; /* Better hit detection */
 
     .point{
       cursor: pointer;
