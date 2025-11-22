@@ -23,6 +23,22 @@ const TRANSLATIONS : { [key: string]: Record<Language, string> } = {
   'map.municipality': {
     'sq': 'Bashkia',
     'en': 'Municipality'
+  },
+  'map.ballot-boxes': {
+    'sq': 'Qendrat e votimit: ',
+    'en': 'Ballot boxes: '
+  },
+  'map.polling-locations': {
+    'sq': 'Adresat e shënuara në e-Albania për këto qendra votimit: ',
+    'en': 'Addresses of these ballot boxes as noted on e-Albania: '
+  },
+  'map.results': {
+    'sq': 'Rezultatet:',
+    'en': 'Results:'
+  },
+  'map.votes': {
+    'sq': ' vota',
+    'en': ' votes'
   }
 }
 

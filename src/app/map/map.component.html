@@ -38,6 +38,17 @@
           </circle>
         }
       }
+      @if(coordinates[selectedPoint - 1].in_njesia){
+        <circle [attr.cx]="coordinates[selectedPoint - 1].svg_x_njesia"
+                [attr.cy]="coordinates[selectedPoint - 1].svg_y_njesia"
+                [attr.r]="0.0009"
+                fill=none
+                stroke="#00bb99"
+                [attr.stroke-width]="0.0003"
+                [attr.fill-opacity]="1"
+        >
+        </circle>
+      }
     </svg>
   } @else {
   <img *ngFor="let unit of administrativeUnitsMunicipality"
@@ -79,13 +90,25 @@
           </circle>
         }
       }
+      @if(!coordinates[selectedPoint - 1].in_njesia){
+        <circle [attr.cx]="coordinates[selectedPoint - 1].svg_x_whole"
+                [attr.cy]="coordinates[selectedPoint - 1].svg_y_whole"
+                [attr.r]="0.0055"
+                fill=none
+                stroke="#00bb99"
+                [attr.stroke-width]="0.002"
+                [attr.fill-opacity]="1"
+                class="point"
+        >
+        </circle>
+      }
     </svg>
   }
 </div>
 
 
 
-
+<div id="map-legend">
 <!-- CITY/MUNICIPALITY TOGGLE BUTTON -->
 <div id="switch-map-button-container">
   <span>{{ __('city') }}</span>
@@ -99,21 +122,58 @@
 
 
 
-
-<!-- POINT TABLE -->
-<div id="point-table">
-  <div id="qv_list">
-    <span>Qendrat e votimit: </span><span>{{coordinates[selectedPoint-1].qv_list}}</span>
-  </div>
-  <div id="addresses">
-    <span>Adresat e shenuara ne e-albania per keto qendra votimit: </span><span>{{coordinates[selectedPoint-1].addresses}}</span>
-  </div>
-  <div id="results-title">
-    <span>Rezultatet:</span>
-  </div>
-
+<!-- GRADIENT -->
+<div id="gradient-container">
+  <span>{{parties[activeMap() - 1].min_percentage}}%</span>
+    <div [style.background]="'linear-gradient(to right, white, ' + hexcode() + ')'" id="gradient">
+    </div>
+  <span>{{parties[activeMap() - 1].max_percentage}}%</span>
+</div>
 </div>
 
 
+
+
+<!-- POINT TABLE -->
+@if(selectedPoint > 0){
+<div id="point-table">
+  <div id="qv_list">
+    <span>{{__('ballot-boxes')}}</span><span>{{coordinates[selectedPoint-1].qv_list}}</span>
+  </div>
+  <div id="results-title">
+    <span>{{__('results')}}</span>
+  </div>
+  <table id="results-table">
+    @for (i of activeIndices(); track i){
+      <tr class="results-row"
+          [ngClass]="{ 'selected' : i+1 === selected_2023 || i+1 === selected_2025 || i+1 === selected_diff}">
+        <th class="results-logo">
+          <img [src]="parties[i].logo_file" class="party-logo" [alt]="partyName(i)">
+        </th>
+        <th class="results-name">
+          <span class="full-party-name">{{parties[i].party}}</span>
+          <span class="party-acronym">{{parties[i].acronym}}</span>
+        </th>
+        <th class="results-percentage">
+          @if(selectedYear !== Year.Difference){
+            {{partyPercentage(i)}}%
+          }
+        </th>
+        <th class="results-votes">
+          @if(selectedYear !== Year.Difference){
+            {{partyVotes(i)}}{{__('votes')}}
+          } @else {
+            {{formatVotes(partyVotes(i))}}%
+          }
+        </th>
+      </tr>
+    }
+  </table>
+  <div id="addresses">
+    <span>{{__('polling-locations')}}</span>
+    <span id="address-list">{{coordinates[selectedPoint-1].addresses}}</span>
+  </div>
+</div>
+}
 
 

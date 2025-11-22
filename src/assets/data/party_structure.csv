@@ -1,22 +1,22 @@
-id,year,party,party_percentage_column,party_votes_column,candidate,hexcode,logo_file,min_percentage,max_percentage
-1,2023,Lëvizja Bashkë,Lëvizja Bashkë (%),Lëvizja Bashkë (votes),Arlind Qori,#232929,assets/images/2023_1.png,0.4,9.88
-2,2023,Fronti i Majtë,Fronti i Majtë (%),Fronti i Majtë (votes),Marko Dajti,#f99ea3,assets/images/2023_2.png,0.0,16.09
-3,2023,"Partia Drejtësi, Integrim dhe Unitet","Partia Drejtësi, Integrim dhe Unitet (%)","Partia Drejtësi, Integrim dhe Unitet (votes)",Lajla Pernaska,#b0b75e,assets/images/2023_3.png,0.0,3.44
-4,2023,Partia Socialiste e Shqipërisë,Partia Socialiste e Shqipërisë (%),Partia Socialiste e Shqipërisë (votes),Erion Veliaj,#FF00FF,assets/images/2023_4.png,34.52,88.4
-5,2023,Bashkë Fitojmë,Bashkë Fitojmë (%),Bashkë Fitojmë (votes),Belind Këlliçi,#09539c,assets/images/2023_5.png,5.88,54.78
-6,2023,Partia Demokratike,Partia Demokratike (%),Partia Demokratike (votes),Roland Bejko,#57a9d4,assets/images/2023_6.png,0.0,12.85
-7,2025,Koalicioni Partia Demokratike,Koalicioni Partia Demokratike - Aleanca për Shqipërinë Madhështore (%),Koalicioni Partia Demokratike - Aleanca për Shqipërinë Madhështore (votes),,#09539c,assets/images/2025_1.png,9.65,58.67
-8,2025,Lëvizja Bashkë,Lëvizja Bashkë (%),Lëvizja Bashkë (votes),,#232929,assets/images/2025_2.png,0.0,6.78
-9,2025,Lëvizja Atdheu,Lëvizja Atdheu (%),Lëvizja Atdheu (votes),,#D99FA6,assets/images/2025_3.png,0.0,1.38
-10,2025,Partia Koalicioni Euroatlantik,Partia Koalicioni Euroatlantik (%),Partia Koalicioni Euroatlantik (votes),,#57a9d4,assets/images/2025_4.png,0.0,26.84
-11,2025,Partia Socialiste e Shqipërisë,Partia Socialiste e Shqipërisë (%),Partia Socialiste e Shqipërisë (votes),,#FF00FF,assets/images/2025_5.png,28.64,77.17
-12,2025,Koalicioni Nisma Shqipëria Bëhet,Koalicioni Nisma Shqipëria Bëhet (%),Koalicioni Nisma Shqipëria Bëhet (votes),,#F7ECD8,assets/images/2025_6.png,0.0,5.98
-13,2025,Partia Aleanca Kombëtare Shqiptare,Partia Aleanca Kombëtare Shqiptare (%),Partia Aleanca Kombëtare Shqiptare (votes),,#F5EB36,assets/images/2025_7.png,0.0,1.33
-14,2025,Partia Aleanca Demokracia e Re,Partia Aleanca Demokracia e Re (%),Partia Aleanca Demokracia e Re (votes),,#99DBF8,assets/images/2025_8.png,0.0,0.9
-15,2025,Koalicioni Djathtas për Zhvillim,Koalicioni Djathtas për Zhvillim (%),Koalicioni Djathtas për Zhvillim (votes),,#3C315F,assets/images/2025_9.png,0.0,2.06
-16,2025,Partia Mundësia,Partia Mundësia (%),Partia Mundësia (votes),,#F79E20,assets/images/2025_10.png,0.0,10.73
-17,2025,Partia Socialdemokrate,Partia Socialdemokrate (%),Partia Socialdemokrate (votes),,#B04251,assets/images/2025_11.png,0.0,44.72
-18,2023-2025,Lëvizja Bashkë,Lëvizja Bashkë (rel change %),Lëvizja Bashkë (abs diff),,#232929,assets/images/2025_2.png,,
-19,2023-2025,Partia Demokratike / Partia Koalicioni Euroatlantik,Koalicioni Euroatlantik (rel change %),Koalicioni Euroatlantik (abs diff),,#57a9d4,assets/images/2025_4.png,,
-20,2023-2025,Partia Socialiste e Shqipërisë,Partia Socialiste (rel change %),Partia Socialiste (abs diff),,#FF00FF,assets/images/2025_5.png,,
-21,2023-2025,Bashkë Fitojmë / Koalicioni Partia Demokratike,Partia Demokratike (rel change %),Partia Demokratike (abs diff),,#09539c,assets/images/2025_1.png,,
+id,year,party,acronym,party_percentage_column,party_votes_column,candidate,hexcode,logo_file,min_percentage,max_percentage
+1,2023,Arlind Qori,Arlind Qori,Lëvizja Bashkë (%),Lëvizja Bashkë (votes),Arlind Qori,#232929,assets/images/2023_1.png,0.4,9.88
+2,2023,Marko Dajti,Marko Dajti,Fronti i Majtë (%),Fronti i Majtë (votes),Marko Dajti,#f99ea3,assets/images/2023_2.png,0.0,16.09
+3,2023,Lajla Pernaska,Lajla Pernaska,"Partia Drejtësi, Integrim dhe Unitet (%)","Partia Drejtësi, Integrim dhe Unitet (votes)",Lajla Pernaska,#b0b75e,assets/images/2023_3.png,0.0,3.44
+4,2023,Erion Veliaj,Erion Veliaj,Partia Socialiste e Shqipërisë (%),Partia Socialiste e Shqipërisë (votes),Erion Veliaj,#FF00FF,assets/images/2023_4.png,34.52,88.4
+5,2023,Belind Këlliçi,Belind Këlliçi,Bashkë Fitojmë (%),Bashkë Fitojmë (votes),Belind Këlliçi,#09539c,assets/images/2023_5.png,5.88,54.78
+6,2023,Roland Bejko,Roland Bejko,Partia Demokratike (%),Partia Demokratike (votes),Roland Bejko,#57a9d4,assets/images/2023_6.png,0.0,12.85
+7,2025,Koalicioni Partia Demokratike,PD-ASHM,Koalicioni Partia Demokratike - Aleanca për Shqipërinë Madhështore (%),Koalicioni Partia Demokratike - Aleanca për Shqipërinë Madhështore (votes),,#09539c,assets/images/2025_1.png,9.65,58.67
+8,2025,Lëvizja Bashkë,BASHKE,Lëvizja Bashkë (%),Lëvizja Bashkë (votes),,#232929,assets/images/2025_2.png,0.0,6.78
+9,2025,Lëvizja Atdheu,LA,Lëvizja Atdheu (%),Lëvizja Atdheu (votes),,#D99FA6,assets/images/2025_3.png,0.0,1.38
+10,2025,Partia Koalicioni Euroatlantik,KEA,Partia Koalicioni Euroatlantik (%),Partia Koalicioni Euroatlantik (votes),,#57a9d4,assets/images/2025_4.png,0.0,26.84
+11,2025,Partia Socialiste e Shqipërisë,PS,Partia Socialiste e Shqipërisë (%),Partia Socialiste e Shqipërisë (votes),,#FF00FF,assets/images/2025_5.png,28.64,77.17
+12,2025,Koalicioni Nisma Shqipëria Bëhet,NISMA-SHB,Koalicioni Nisma Shqipëria Bëhet (%),Koalicioni Nisma Shqipëria Bëhet (votes),,#F7ECD8,assets/images/2025_6.png,0.0,5.98
+13,2025,Partia Aleanca Kombëtare Shqiptare,AKSH,Partia Aleanca Kombëtare Shqiptare (%),Partia Aleanca Kombëtare Shqiptare (votes),,#F5EB36,assets/images/2025_7.png,0.0,1.33
+14,2025,Partia Aleanca Demokracia e Re,ADR,Partia Aleanca Demokracia e Re (%),Partia Aleanca Demokracia e Re (votes),,#99DBF8,assets/images/2025_8.png,0.0,0.9
+15,2025,Koalicioni Djathtas për Zhvillim,DZH,Koalicioni Djathtas për Zhvillim (%),Koalicioni Djathtas për Zhvillim (votes),,#3C315F,assets/images/2025_9.png,0.0,2.06
+16,2025,Partia Mundësia,MUNDESIA,Partia Mundësia (%),Partia Mundësia (votes),,#F79E20,assets/images/2025_10.png,0.0,10.73
+17,2025,Partia Socialdemokrate,PSD,Partia Socialdemokrate (%),Partia Socialdemokrate (votes),,#B04251,assets/images/2025_11.png,0.0,44.72
+18,2023-2025,Lëvizja Bashkë,BASHKE,Lëvizja Bashkë (rel change %),Lëvizja Bashkë (abs diff),,#232929,assets/images/2025_2.png,,
+19,2023-2025,Partia Demokratike / Partia Koalicioni Euroatlantik,PD (Lulzim Basha),Koalicioni Euroatlantik (rel change %),Koalicioni Euroatlantik (abs diff),,#57a9d4,assets/images/2025_4.png,,
+20,2023-2025,Partia Socialiste e Shqipërisë,PS,Partia Socialiste (rel change %),Partia Socialiste (abs diff),,#FF00FF,assets/images/2025_5.png,,
+21,2023-2025,Bashkë Fitojmë / Koalicioni Partia Demokratike,PD (Sali Berisha),Partia Demokratike (rel change %),Partia Demokratike (abs diff),,#09539c,assets/images/2025_1.png,,
