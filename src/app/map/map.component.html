@@ -42,10 +42,10 @@
       @if(coordinates[selectedPoint - 1].in_njesia){
         <circle [attr.cx]="coordinates[selectedPoint - 1].svg_x_njesia"
                 [attr.cy]="coordinates[selectedPoint - 1].svg_y_njesia"
-                [attr.r]="0.0009"
+                [attr.r]="0.9"
                 fill=none
                 stroke="#00bb99"
-                [attr.stroke-width]="0.0003"
+                [attr.stroke-width]="0.3"
                 [attr.fill-opacity]="1"
         >
         </circle>
@@ -95,10 +95,10 @@
       @if(!coordinates[selectedPoint - 1].in_njesia){
         <circle [attr.cx]="coordinates[selectedPoint - 1].svg_x_whole"
                 [attr.cy]="coordinates[selectedPoint - 1].svg_y_whole"
-                [attr.r]="0.0055"
+                [attr.r]="5.5"
                 fill=none
                 stroke="#00bb99"
-                [attr.stroke-width]="0.002"
+                [attr.stroke-width]="2"
                 [attr.fill-opacity]="1"
                 class="point"
         >
