@@ -40,6 +40,25 @@
   }
 }
 
+#point-table{
+  background-color: $background-brand-color;
+  padding: 10px 10px 10px 10px;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Sofia-Sans, sans-serif;
+  font-size: 14px;
+
+  #addresses{
+    margin: 10px 0 10px 0;
+  }
+
+  #results-title{
+    font-weight: 600;
+  }
+}
+
+
 @media (min-width: 768px) {
   .map-container{
     width: 85%;
@@ -54,7 +73,13 @@
       font-size: 14px;
     }
   }
+
+  #point-table{
+    margin: 0;
+  }
 }
+
+
 
 /*Toggle Button code, Don't touch! */
 .switch {

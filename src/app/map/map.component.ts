@@ -18,6 +18,7 @@ export class MapComponent implements OnInit{
   @Input() selected_2025!: number;
   @Input() selected_diff!: number;
   @Input() selectedYear!: Year.Year2023 | Year.Difference | Year.Year2025;
+  protected selectedPoint: number = 33;
 
   protected parties: any[] = [];
   protected administrativeUnitsCity: any[] = [];
@@ -27,6 +28,10 @@ export class MapComponent implements OnInit{
   protected results2023: any[] = [];
   protected results2025: any[] = [];
   protected resultsDiff: any[] = [];
+
+  protected indices2023 = [0, 1, 2, 3, 4, 5];
+  protected indices2025 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+  protected indicesDiff = [18, 19, 20, 21];
 
   protected showCity: boolean = true;
 
@@ -133,7 +138,38 @@ export class MapComponent implements OnInit{
     }
   }
 
-  click(id: string){
+  partyName(id: number){
+    return this.parties[id].party;
+  }
+
+  partyVotes(id: number){
+    let party = this.parties[id];
+    if(this.selectedYear === Year.Year2023) {
+      return this.results2023[this.selectedPoint][party.party_percentage_column];
+    }
+    if(this.selectedYear === Year.Year2025) {
+      return this.results2025[this.selectedPoint][party.party_percentage_column];
+    }
+    else {
+      return this.resultsDiff[this.selectedPoint][party.party_percentage_column];
+    }
+  }
+
+  partyPercentage(id: number){
+    let party = this.parties[id];
+    if(this.selectedYear === Year.Year2023) {
+      return this.results2023[this.selectedPoint][party.party_votes_column];
+    }
+    if(this.selectedYear === Year.Year2025) {
+      return this.results2025[this.selectedPoint][party.party_votes_column];
+    }
+    else {
+      return this.resultsDiff[this.selectedPoint][party.party_votes_column];
+    }
+  }
+
+  click(point: number){
+    this.selectedPoint = point;
   }
 
   __(key: string): string {

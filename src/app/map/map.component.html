@@ -1,4 +1,5 @@
-<div class="map-container">
+<!-- MAP -->
+<div class="map-container" xmlns="http://www.w3.org/1999/html">
   @if(showCity){
     <img *ngFor="let unit of administrativeUnitsCity"
        [src]="'assets/svg/city/' + unit.svg_filename"
@@ -82,6 +83,10 @@
   }
 </div>
 
+
+
+
+<!-- CITY/MUNICIPALITY TOGGLE BUTTON -->
 <div id="switch-map-button-container">
   <span>{{ __('city') }}</span>
   <label class="switch">
@@ -91,6 +96,23 @@
   <span>{{ __('municipality') }}</span>
 </div>
 
+
+
+
+
+<!-- POINT TABLE -->
+<div id="point-table">
+  <div id="qv_list">
+    <span>Qendrat e votimit: </span><span>{{coordinates[selectedPoint-1].qv_list}}</span>
+  </div>
+  <div id="addresses">
+    <span>Adresat e shenuara ne e-albania per keto qendra votimit: </span><span>{{coordinates[selectedPoint-1].addresses}}</span>
+  </div>
+  <div id="results-title">
+    <span>Rezultatet:</span>
+  </div>
+
+</div>
 
 
 
