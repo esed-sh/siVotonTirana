@@ -122,6 +122,9 @@
 .selected{
   background-color: $background-selected-color;
 }
+path, line, polyline {
+  stroke-width: 0;
+}
 
 
 @media (min-width: 768px) {
