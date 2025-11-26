@@ -20,3 +20,6 @@ id,year,party,acronym,party_percentage_column,party_votes_column,candidate,hexco
 19,2023-2025,Partia Demokratike / Partia Koalicioni Euroatlantik,PD (Lulzim Basha),Koalicioni Euroatlantik (rel change %),Koalicioni Euroatlantik (abs diff),,#007aba,assets/images/2025_4.png,,
 20,2023-2025,Partia Socialiste e Shqipërisë,PS,Partia Socialiste (rel change %),Partia Socialiste (abs diff),,#FF00FF,assets/images/2025_5.png,,
 21,2023-2025,Bashkë Fitojmë / Koalicioni Partia Demokratike,PD (Sali Berisha),Partia Demokratike (rel change %),Partia Demokratike (abs diff),,#09539c,assets/images/2025_1.png,,
+22,Other,Diferenca midis PS dhe Bashkë Fitojmë (2023),,PS minus PD 2023 (%),,,,assets/images/Other_1.png,-19.93,81.77
+23,Other,Diferenca midis PS dhe Koalicionit të PD (2025),,PS minus PD 2025 (%),,,,assets/images/Other_1.png,-28.04,65.21
+24,Other,Partitë e reja së bashku (2025),,Partite e reja 2025 (%),,,#000000,assets/images/Other_2.png,0.0,19.84
