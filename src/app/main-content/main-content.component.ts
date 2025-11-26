@@ -7,7 +7,8 @@ import {MapComponent} from '../map/map.component';
 export enum Year{
   Year2023 = '2023',
   Year2025 = '2025',
-  Difference = '+/-'
+  Difference = '+/-',
+  Other = 'Other'
 }
 
 @Component({
@@ -31,6 +32,7 @@ export class MainContentComponent implements OnInit{
   protected selected_2023: number = 4;
   protected selected_2025: number = 11;
   protected selected_diff: number = 20;
+  protected selected_other: number = 23;
   protected smallParties: boolean = false;
 
   constructor(private csvLoader: CsvLoaderService,
@@ -60,6 +62,11 @@ export class MainContentComponent implements OnInit{
 
   select_diff(id: number){
     this.selected_diff = id;
+  }
+
+  select_other(id: number){
+    console.log(id);
+    this.selected_other = id;
   }
 
   showSmallParties(){

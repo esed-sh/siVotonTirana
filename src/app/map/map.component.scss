@@ -61,7 +61,7 @@
   gap: 5px;
   align-items: center;
 
-  #gradient{
+  .gradient{
     width: 50px;
     height: 20px;
     border-width: 1px;
@@ -117,6 +117,10 @@
           border-color: $main-text-color;
 
         }
+      }
+
+      .bold-row{
+        font-weight: 900;
       }
     }
   }

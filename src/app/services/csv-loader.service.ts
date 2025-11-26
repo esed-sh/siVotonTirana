@@ -10,7 +10,8 @@ export enum LoadOption{
   Coordinates = 'assets/data/tirane_qv_coordinates_extended.csv',
   Results2023 = 'assets/data/coordinate_results_2023.csv',
   Results2025 = 'assets/data/coordinate_results_2025.csv',
-  ResultsDiff = 'assets/data/coordinate_results_diff_2023_2025.csv'
+  ResultsDiff = 'assets/data/coordinate_results_diff_2023_2025.csv',
+  ResultsOther = 'assets/data/coordinate_results_other.csv'
 }
 
 @Injectable({

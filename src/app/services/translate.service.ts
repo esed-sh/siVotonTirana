@@ -16,6 +16,10 @@ const TRANSLATIONS : { [key: string]: Record<Language, string> } = {
     'sq': 'Fsheh partitë pa përfaqësim në parlament',
     'en': 'Hide parties not represented in the parliament'
   },
+  'main.other': {
+    'sq': 'Të tjera',
+    'en': 'Other'
+  },
   'map.city': {
     'sq': 'Qyteti',
     'en': 'City'
@@ -39,6 +43,14 @@ const TRANSLATIONS : { [key: string]: Record<Language, string> } = {
   'map.votes': {
     'sq': ' vota',
     'en': ' votes'
+  },
+  'map.difference': {
+    'sq': 'Diferenca:',
+    'en': 'Difference:'
+  },
+  'map.total': {
+    'sq': 'Totali:',
+    'en': 'Total:'
   }
 }
 

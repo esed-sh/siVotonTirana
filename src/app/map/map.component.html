@@ -10,7 +10,7 @@
          preserveAspectRatio="xMidYMid meet"
          class="point-viewBox">
       @for(point of coordinates; track point.id){
-        @if(point.in_njesia && selectedYear !== Year.Difference){
+        @if(point.in_njesia && (selectedYear !== Year.Difference || selected_other === 24)){
           <circle [attr.cx]="point.svg_x_njesia"
                   [attr.cy]="point.svg_y_njesia"
                   [attr.r]="0.5"
@@ -23,7 +23,7 @@
           >
           </circle>
         }
-        @if(point.in_njesia && selectedYear === Year.Difference){
+        @if(point.in_njesia && (selectedYear === Year.Difference || (selectedYear === Year.Other && selected_other !== 24))){
           <circle [attr.cx]="point.svg_x_njesia"
                   [attr.cy]="point.svg_y_njesia"
                   [attr.r]="0.5"
@@ -61,7 +61,7 @@
          preserveAspectRatio="xMidYMid meet"
          class="point-viewBox">
       @for(point of coordinates; track point.id){
-        @if(!point.in_njesia && selectedYear !== Year.Difference){
+        @if(!point.in_njesia && (selectedYear !== Year.Difference || selected_other === 24)){
           <circle [attr.cx]="point.svg_x_whole"
                   [attr.cy]="point.svg_y_whole"
                   [attr.r]="3"
@@ -74,7 +74,7 @@
           >
           </circle>
         }
-        @if(!point.in_njesia && selectedYear === Year.Difference){
+        @if(!point.in_njesia && (selectedYear === Year.Difference || (selectedYear === Year.Other && selected_other !== 24))){
           <circle [attr.cx]="point.svg_x_whole"
                   [attr.cy]="point.svg_y_whole"
                   [attr.r]="3"
@@ -123,10 +123,15 @@
 <!-- GRADIENT -->
 @if(selectedYear !== Year.Difference){
   <div id="gradient-container">
-    <span>{{parties[activeMap() - 1].min_percentage}}%</span>
-    <div [style.background]="'linear-gradient(to right, white, ' + hexcode() + ')'" id="gradient">
-    </div>
-    <span>{{parties[activeMap() - 1].max_percentage}}%</span>
+    @if(selectedYear === Year.Other && (selected_other === 22 || selected_other === 23)){
+      <div [style.background]="'linear-gradient(to right, rgb(9, 83, 156), white, rgb(255, 0, 255))'" class="gradient">
+      </div>
+    } @else {
+      <span>{{parties[activeMap() - 1].min_percentage}}%</span>
+      <div [style.background]="'linear-gradient(to right, white, ' + hexcode() + ')'" class="gradient">
+      </div>
+      <span>{{parties[activeMap() - 1].max_percentage}}%</span>
+    }
   </div>
 }
 </div>
@@ -135,45 +140,62 @@
 
 
 <!-- POINT TABLE -->
+
 @if(selectedPoint > 0){
-<div id="point-table">
-  <div id="qv_list">
-    <span>{{__('ballot-boxes')}}</span><span>{{coordinates[selectedPoint-1].qv_list}}</span>
+  <div id="point-table">
+    <div id="qv_list">
+      <span>{{__('ballot-boxes')}}</span><span>{{coordinates[selectedPoint-1].qv_list}}</span>
+    </div>
+    <div id="results-title">
+      <span>{{__('results')}}</span>
+    </div>
+    <table id="results-table">
+      @for (i of activeIndices(); track i){
+        <tr class="results-row"
+            [ngClass]="{ 'selected' : i+1 === selected_2023 || i+1 === selected_2025 || i+1 === selected_diff}">
+          <th class="results-logo">
+            <img [src]="parties[i].logo_file" class="party-logo" [alt]="partyName(i)">
+          </th>
+          <th class="results-name">
+            <span class="full-party-name">{{parties[i].party}}</span>
+            <span class="party-acronym">{{parties[i].acronym}}</span>
+          </th>
+          <th class="results-percentage">
+            @if(selectedYear !== Year.Difference){
+              {{partyPercentage(i)}}%
+            }
+          </th>
+          <th class="results-votes">
+            @if(selectedYear === Year.Year2023 || selectedYear === Year.Year2025){
+              {{partyVotes(i)}}{{__('votes')}}
+            } @else if (selectedYear === Year.Difference) {
+              {{formatVotes(partyVotes(i))}}%
+            }
+          </th>
+        </tr>
+      }
+      @if (selectedYear === Year.Other){
+        <tr class="results-row">
+          <th class="results-logo bold-row">
+          </th>
+          <th class="results-name bold-row">
+            @if(selected_other === 24){
+              {{__('total')}}
+            } @else {
+              {{__('difference')}}
+            }
+          </th>
+          <th class="results-votes bold-row">
+            {{ percentage(selectedPoint) }}%
+          </th>
+        </tr>
+      }
+    </table>
+    <div id="addresses">
+      <span>{{__('polling-locations')}}</span>
+      <span id="address-list">{{coordinates[selectedPoint-1].addresses}}</span>
+    </div>
   </div>
-  <div id="results-title">
-    <span>{{__('results')}}</span>
-  </div>
-  <table id="results-table">
-    @for (i of activeIndices(); track i){
-      <tr class="results-row"
-          [ngClass]="{ 'selected' : i+1 === selected_2023 || i+1 === selected_2025 || i+1 === selected_diff}">
-        <th class="results-logo">
-          <img [src]="parties[i].logo_file" class="party-logo" [alt]="partyName(i)">
-        </th>
-        <th class="results-name">
-          <span class="full-party-name">{{parties[i].party}}</span>
-          <span class="party-acronym">{{parties[i].acronym}}</span>
-        </th>
-        <th class="results-percentage">
-          @if(selectedYear !== Year.Difference){
-            {{partyPercentage(i)}}%
-          }
-        </th>
-        <th class="results-votes">
-          @if(selectedYear !== Year.Difference){
-            {{partyVotes(i)}}{{__('votes')}}
-          } @else {
-            {{formatVotes(partyVotes(i))}}%
-          }
-        </th>
-      </tr>
-    }
-  </table>
-  <div id="addresses">
-    <span>{{__('polling-locations')}}</span>
-    <span id="address-list">{{coordinates[selectedPoint-1].addresses}}</span>
-  </div>
-</div>
 }
 
 

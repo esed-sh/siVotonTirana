@@ -19,7 +19,8 @@ export class MapComponent implements OnInit{
   @Input() selected_2023!: number;
   @Input() selected_2025!: number;
   @Input() selected_diff!: number;
-  @Input() selectedYear!: Year.Year2023 | Year.Difference | Year.Year2025;
+  @Input() selected_other!: number;
+  @Input() selectedYear!: Year.Year2023 | Year.Difference | Year.Year2025 | Year.Other;
   protected selectedPoint: number = 0;
 
   @Input() smallParties!: boolean;
@@ -32,11 +33,15 @@ export class MapComponent implements OnInit{
   protected results2023: any[] = [];
   protected results2025: any[] = [];
   protected resultsDiff: any[] = [];
+  protected resultsOther: any[] = [];
 
   protected indices2023 = [0, 1, 2, 3, 4, 5];
   protected indices2025 = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
   protected indices2025noSmall = [6, 7, 10, 11, 15, 16];
   protected indicesDiff = [17, 18, 19, 20];
+  protected indicesOther22 = [3, 4];
+  protected indicesOther23 = [6, 10];
+  protected indicesOther24 = [7, 11, 15];
 
   protected showCity: boolean = true;
 
@@ -81,6 +86,10 @@ export class MapComponent implements OnInit{
       this.resultsDiff = data;
       console.log('Loaded result differences between 2023 and 2025.');
     })
+    this.csvLoader.loadData(LoadOption.ResultsOther).subscribe(data => {
+      this.resultsOther = data;
+      console.log('Loaded other results.');
+    })
   }
 
   switchMap(){
@@ -94,8 +103,11 @@ export class MapComponent implements OnInit{
     if(this.selectedYear === Year.Year2025) {
       return this.selected_2025;
     }
-    else {
+    if(this.selectedYear === Year.Difference) {
       return this.selected_diff;
+    }
+    else{
+      return this.selected_other;
     }
   }
 
@@ -109,8 +121,15 @@ export class MapComponent implements OnInit{
     else if(this.selectedYear === Year.Year2025 && !this.smallParties) {
       return this.indices2025noSmall
     }
-    else{
+    else if(this.selectedYear === Year.Difference){
       return this.indicesDiff;
+    }
+    else{
+      switch (this.selected_other){
+        case 22: return this.indicesOther22;
+        case 23: return this.indicesOther23;
+        default: return this.indicesOther24;
+      }
     }
   }
 
@@ -122,27 +141,33 @@ export class MapComponent implements OnInit{
     let party = this.parties[this.activeMap() - 1];
     let percentage = this.percentage(point);
     const linear = (percentage - party.min_percentage) / (party.max_percentage - party.min_percentage);
-    return 1.35 * Math.pow(linear, 2)
+    return Math.pow(linear, 2)
   }
 
   hexcodeDiff(point: number){
     let percentage = this.percentage(point);
 
     const clamped = Math.max(-50, Math.min(50, percentage));
-
     const intensity = Math.abs(clamped) / 50;
 
-    if (clamped < 0) {
-      const red = Math.round(255 - (70 * intensity));
-      const green = Math.round(255 - (255 * intensity));
-      const blue = Math.round(255 - (255 * intensity));
-      return `rgb(${red}, ${green}, ${blue})`;
+    let negativeColor, positiveColor;
+
+    if (this.selectedYear == Year.Difference) {
+      negativeColor = { red: 220, green: 0, blue: 0 };
+      positiveColor = { red: 0, green: 140, blue: 0 };
     } else {
-      const red = Math.round(255 - (255 * intensity));
-      const green = Math.round(255 - (100 * intensity));
-      const blue = Math.round(255 - (235 * intensity));
-      return `rgb(${red}, ${green}, ${blue})`;
+      negativeColor = { red: 9, green: 83, blue: 156 };
+      positiveColor = { red: 255, green: 0, blue: 255 };
     }
+
+    const baseColor = { red: 255, green: 255, blue: 255 };
+    const targetColor = clamped < 0 ? negativeColor : positiveColor;
+
+    const red = Math.round(baseColor.red + (targetColor.red - baseColor.red) * intensity);
+    const green = Math.round(baseColor.green + (targetColor.green - baseColor.green) * intensity);
+    const blue = Math.round(baseColor.blue + (targetColor.blue - baseColor.blue) * intensity);
+
+    return `rgb(${red}, ${green}, ${blue})`;
   }
 
   opacityDiff(){
@@ -157,8 +182,11 @@ export class MapComponent implements OnInit{
     if(this.selectedYear === Year.Year2025) {
       return this.results2025[point-1][party.party_percentage_column];
     }
-    else {
+    if(this.selectedYear === Year.Difference){
       return this.resultsDiff[point-1][party.party_percentage_column];
+    }
+    else{
+      return this.resultsOther[point-1][party.party_percentage_column];
     }
   }
 
@@ -168,10 +196,11 @@ export class MapComponent implements OnInit{
 
   partyPercentage(id: number){
     let party = this.parties[id];
-    if(this.selectedYear === Year.Year2023) {
+    if(this.selectedYear === Year.Year2023 || this.selectedYear === Year.Other && this.selected_other === 22) {
       return this.results2023[this.selectedPoint - 1][party.party_percentage_column];
     }
-    if(this.selectedYear === Year.Year2025) {
+    if(this.selectedYear === Year.Year2025 || this.selectedYear === Year.Other && this.selected_other === 23
+      || this.selectedYear === Year.Other && this.selected_other === 24) {
       return this.results2025[this.selectedPoint - 1][party.party_percentage_column];
     }
     else {

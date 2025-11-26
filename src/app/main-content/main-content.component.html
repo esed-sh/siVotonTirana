@@ -23,6 +23,12 @@
     >
       +/-
     </button>
+    <button class="year-button"
+            (click)="changeYear(Year.Other)"
+            [ngClass]="{ 'year-button-selected' : selectedYear === Year.Other }"
+    >
+      {{ __('other') }}
+    </button>
   </div>
 
 
@@ -62,14 +68,25 @@
 
     @if(selectedYear === Year.Difference){
       <div class="party-button"
-           *ngFor="let party of parties | slice:17"
+           *ngFor="let party of parties | slice:17: 21"
            (click)="select_diff(party.id)"
       >
         <img [src]="party.logo_file" class="party-logo" [alt]="party.party">
         <span class="party-name" [ngClass]="{ selected : (party.id === selected_diff) }">{{ party.party }}</span>
       </div>
     }
+
+    @if(selectedYear === Year.Other){
+      <div class="party-button"
+           *ngFor="let party of parties | slice:21"
+           (click)="select_other(party.id)"
+      >
+        <img [src]="party.logo_file" class="party-logo" [alt]="party.party">
+        <span class="party-name" [ngClass]="{ selected : (party.id === selected_other) }">{{ party.party }}</span>
+      </div>
+    }
   </div>
+
   @if(selectedYear === Year.Year2025){
     <div id="small-parties-section">
       @if(smallParties){
@@ -90,6 +107,7 @@
     [selected_2023] = "selected_2023"
     [selected_2025] = "selected_2025"
     [selected_diff] = "selected_diff"
+    [selected_other] = "selected_other"
     [smallParties] = "smallParties"
   ></app-map>
 </div>
